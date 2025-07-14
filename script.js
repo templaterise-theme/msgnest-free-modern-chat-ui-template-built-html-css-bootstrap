@@ -77,17 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let pendingFiles         = [];
   let activeDropdown       = null;
   let isMobile             = window.innerWidth <= 768;
+  let activeChat           = false;
 
   
  /* ── bottom‑nav helpers (core CSS) ──────── */
   const hideBottomNav = () => {
+    if(activeChat){
     if (el.mobileBottomNav) el.mobileBottomNav.style.display = 'none';
+    }
   };
-  const showBottomNav = () => {                /* 🔸 guard with isMobile */
-    if (isMobile && el.mobileBottomNav) el.mobileBottomNav.style.display = 'flex';
+  const showBottomNav = () => {
+     if(!activeChat){
+       if (isMobile && el.mobileBottomNav) el.mobileBottomNav.style.display = 'flex';
+     }  
   };
 
-  /* 🔸 initial vis‑state (fresh load) */
+
   if (isMobile) showBottomNav(); else hideBottomNav();
 
   /* ── theme ──────────────────────────────── */
@@ -174,6 +179,7 @@ el.navIcons.forEach(icon => {
   });
 
   el.mobileBackBtn?.addEventListener('click', () => {
+    activeChat = false;
     showBottomNav();  
     el.chatMain?.classList.remove('active');
     el.sidebar?.style.setProperty('display', 'flex');
@@ -199,8 +205,10 @@ function setupUserSelection () {
         el.currentChatName.forEach(n => n.textContent   = name);
         el.currentChatAvatar.forEach(a => a.textContent = avatar);
 
+        activeChat = true;
+
         if (isMobile) {
-          hideBottomNav();                       // bar disappears in chat view
+          hideBottomNav();
           el.sidebar?.style.setProperty('display', 'none');
           el.chatMain?.classList.add('active');
         }
