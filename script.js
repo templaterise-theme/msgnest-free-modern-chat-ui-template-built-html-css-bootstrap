@@ -181,13 +181,6 @@ el.navIcons.forEach(icon => {
   window.addEventListener('resize', () => {
     isMobile = window.innerWidth <= 768;
     updateBottomNavVisibility();
-    // if (isMobile) {
-    //   showBottomNav();
-    // } else {
-    //   hideBottomNav();
-    //   el.chatMain?.classList.remove('active');
-    //   el.sidebar?.style.setProperty('display', 'flex');
-    // }
   });
 
 

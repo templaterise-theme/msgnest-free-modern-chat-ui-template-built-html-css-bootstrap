@@ -475,7 +475,7 @@ body {
   height: 36px;
   border: none;
   border-radius: 50%;
-  background: var(--bg-tertiary);
+  background: var(--bg-tertiary) !important;
   color: var(--text-secondary);
   cursor: pointer;
   display: flex;
@@ -2764,7 +2764,8 @@ body {
 
 .vertical-nav {
   width: 70px;
-  background: var(--primary);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2785,19 +2786,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--text-primary);
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .nav-icon:hover,
 .nav-icon.active {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--hover-bg);
 }
 
 .vertical-nav img {
-  width: 28px;
-  height: 28px;
   border-radius: 50%;
 }
 
@@ -2819,6 +2818,11 @@ body {
 
 .user-profile {
   margin-top: auto;
+}
+
+.user-profile img {
+  width: 36px;
+  height: 36px;
 }
 
 .setting-menu li i {
@@ -2848,10 +2852,6 @@ body {
   .tab-panel {
     width: 100%;
   }
-}
-
-.nav-icon.active {
-  background: rgba(255, 255, 255, 0.25);
 }
 
 .contact-list {
@@ -3254,4 +3254,37 @@ body {
   body.keyboard-visible .chat-input {
     transform: translateY(calc(-100% + env(safe-area-inset-bottom)));
   }
+}
+
+.back-chat-auth {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.profile-toggle-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+@media screen and (max-width: 1024px) {
+   #audioCallBtn, #videoCallBtn {
+       display: none;
+  }
+}
+
+
+.chat-setting-option li a {
+  display: flex;
+  justify-content: space-between;
 }

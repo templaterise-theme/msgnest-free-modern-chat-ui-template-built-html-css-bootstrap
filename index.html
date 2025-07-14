@@ -13,9 +13,10 @@
         <!-- Left Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="vertical-nav" id="verticalNav">
-                <div class="nav-icon logo tab-swtich">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Logo"
-                        class="no-lightbox" />
+                <div class="nav-icon tab-swtich">
+                    <a href="index.html">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Logo" class="logo no-lightbox" />
+                    </a>
                 </div>
                 <div class="nav-icon has-badge active tab-swtich" data-tab="chats">
                     <i class="fas fa-comment-dots"></i><span class="badge">9</span>
@@ -24,22 +25,40 @@
                 <div class="nav-icon tab-swtich" data-tab="contacts"><i class="fas fa-book"></i></div>
                 <div class="nav-icon tab-swtich" data-tab="favorites"><i class="fas fa-star"></i></div>
                 <div class="nav-icon tab-swtich" data-tab="settings"><i class="fas fa-cog"></i></div>
-                <div class="nav-icon user-profile tab-swtich dropdown" id="userProfileBtn">
-                    <button class="dropdown-btn" aria-haspopup="true" data-dir="right top" aria-expanded="false">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="User"
-                            class="no-lightbox" />
-                    </button>
-                    <ul class="dropdown-menu setting-menu" aria-label="Setting">
-                        <li>
-                            <a href="#"><i class="fas fa-info-circle"></i>Info</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-cog"></i>Setting</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-question-circle"></i>Help</a>
-                        </li>
-                    </ul>
+                <div class="mt-auto">
+                    <div class="profile-toggle-theme">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                        <div class="user-profile dropdown " id="userProfileBtn">
+                            <button class="dropdown-btn" aria-haspopup="true" data-dir="right top" aria-expanded="false">
+                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="User"
+                                    class="no-lightbox" />
+                            </button>
+                            <ul class="dropdown-menu setting-menu" aria-label="Setting">
+                                <li>
+                                    <a href="#"><i class="fas fa-info-circle"></i>Info</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-cog"></i>Setting</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-question-circle"></i>Help</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-panel" id="tab-chats">
@@ -629,14 +648,16 @@
         <!-- Main Chat Area -->
         <div class="chat-main" id="chatMain">
             <div class="chat-header">
-                <button class="mobile-back-btn" id="mobileBackBtn">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <div class="chat-user-info" id="chatUserInfo">
-                    <div class="chat-avatar currentChatAvatar">SW</div>
-                    <div class="chat-user-details">
-                        <h3 class="currentChatName">Sarah Wilson</h3>
-                        <div class="chat-user-status">Active now</div>
+                <div class="back-chat-auth">
+                    <button class="mobile-back-btn" id="mobileBackBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="chat-user-info" id="chatUserInfo">
+                        <div class="chat-avatar currentChatAvatar">SW</div>
+                        <div class="chat-user-details">
+                            <h3 class="currentChatName">Sarah Wilson</h3>
+                            <div class="chat-user-status">Active now</div>
+                        </div>
                     </div>
                 </div>
 
@@ -663,28 +684,31 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </button>
-                    <button class="action-btn" id="moreOptionsBtn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="1"></circle>
-                            <circle cx="19" cy="12" r="1"></circle>
-                            <circle cx="5" cy="12" r="1"></circle>
-                        </svg>
-                    </button>
-                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                    </button>
+
+                     <div class="dropdown">
+                        <button class="dropdown-btn action-btn" data-dir="bottom left" aria-label="More options">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu setting-menu chat-setting-option">
+                            <li>
+                                <a href="#">Archive <i class="fa-solid fa-box-archive"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Muted <i class="fa-solid fa-volume-xmark"></i></a>
+                            </li>
+                             <li>
+                                <a href="#">Delete Chat <i class="fa-solid fa-trash-can"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Close Chat <i class="fa-solid fa-folder-closed"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
