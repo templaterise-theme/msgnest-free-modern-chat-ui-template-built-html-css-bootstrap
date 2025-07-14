@@ -77,7 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let pendingFiles         = [];
   let activeDropdown       = null;
   let isMobile             = window.innerWidth <= 768;
-  let activeChat           = false;
+  let activeChat = false;
+  let keyboardVisible = false;
+
+
+  function updateBottomNavVisibility() {
+        if (isMobile && el.mobileBottomNav) {
+            if (activeChat || keyboardVisible) {
+                el.mobileBottomNav.style.display = 'none';
+            } else {
+                el.mobileBottomNav.style.display = 'flex';
+            }
+        }
+  }
+
+  updateBottomNavVisibility();
 
   
  /* ── bottom‑nav helpers (core CSS) ──────── */
@@ -166,19 +180,35 @@ el.navIcons.forEach(icon => {
 
   window.addEventListener('resize', () => {
     isMobile = window.innerWidth <= 768;
-
-    if (isMobile) {
-      showBottomNav();
-    } else {
-      hideBottomNav();
-      el.chatMain?.classList.remove('active');
-      el.sidebar?.style.setProperty('display', 'flex');
-    }
+    updateBottomNavVisibility();
+    // if (isMobile) {
+    //   showBottomNav();
+    // } else {
+    //   hideBottomNav();
+    //   el.chatMain?.classList.remove('active');
+    //   el.sidebar?.style.setProperty('display', 'flex');
+    // }
   });
+
+
+  if ('visualViewport' in window) {
+      const visualViewport = window.visualViewport;
+      
+      visualViewport.addEventListener('resize', function() {
+          // Check if keyboard is open
+          keyboardVisible = (window.innerHeight - visualViewport.height) > 100;
+          updateBottomNavVisibility();
+          
+          if (keyboardVisible && el.chatMessages) {
+              // Scroll to bottom when keyboard appears
+              el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
+          }
+      });
+  }
 
   el.mobileBackBtn?.addEventListener('click', () => {
     activeChat = false;
-    showBottomNav();  
+    updateBottomNavVisibility();
     el.chatMain?.classList.remove('active');
     el.sidebar?.style.setProperty('display', 'flex');
   });
@@ -203,10 +233,11 @@ function setupUserSelection () {
         el.currentChatName.forEach(n => n.textContent   = name);
         el.currentChatAvatar.forEach(a => a.textContent = avatar);
 
-        activeChat = true;
+       activeChat = true;
+       updateBottomNavVisibility();
 
         if (isMobile) {
-          hideBottomNav();
+          el.mobileBottomNav.style.display = 'none';
           el.sidebar?.style.setProperty('display', 'none');
           el.chatMain?.classList.add('active');
         }
@@ -216,6 +247,7 @@ function setupUserSelection () {
 
    setupUserSelection();
 
+  /* ── messaging ──────────────────────────── */
   el.sendButton?.addEventListener('click', sendMessage);
   el.messageInput?.addEventListener('keypress', e => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
@@ -457,5 +489,21 @@ function setupUserSelection () {
       if (el.videoDuration) el.videoDuration.textContent = t;
     }, 1000);
   }
+
+
+  if (el.messageInput) {
+    el.messageInput.addEventListener('focus', function() {
+      // Set keyboard visible state
+      keyboardVisible = true;
+      updateBottomNavVisibility();
+    });
+    
+    el.messageInput.addEventListener('blur', function() {
+      // Set keyboard hidden state
+      keyboardVisible = false;
+      updateBottomNavVisibility();
+    });
+  }
+
 });
 
