@@ -168,10 +168,8 @@ el.navIcons.forEach(icon => {
     isMobile = window.innerWidth <= 768;
 
     if (isMobile) {
-      /* switched to small viewport */
       showBottomNav();
     } else {
-      /* switched to desktop */
       hideBottomNav();
       el.chatMain?.classList.remove('active');
       el.sidebar?.style.setProperty('display', 'flex');
@@ -218,7 +216,6 @@ function setupUserSelection () {
 
    setupUserSelection();
 
-  /* ── messaging ──────────────────────────── */
   el.sendButton?.addEventListener('click', sendMessage);
   el.messageInput?.addEventListener('keypress', e => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
