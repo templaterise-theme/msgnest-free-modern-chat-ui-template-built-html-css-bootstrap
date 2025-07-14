@@ -1466,5 +1466,61 @@
             reader.readAsDataURL(file);
         }
     </script>
+     <script>
+        // Detect when virtual keyboard is shown/hidden on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const messageInput = document.getElementById('messageInput');
+            
+            // Track keyboard visibility
+            let keyboardVisible = false;
+            
+            // Handle mobile virtual keyboard events
+            if ('visualViewport' in window) {
+                const viewport = window.visualViewport;
+                
+                viewport.addEventListener('resize', function() {
+                    // Check if keyboard is visible (viewport height reduced significantly)
+                    keyboardVisible = (window.innerHeight - viewport.height) > 100;
+                    
+                    // Update body class
+                    if (keyboardVisible) {
+                        body.classList.add('keyboard-visible');
+                    } else {
+                        body.classList.remove('keyboard-visible');
+                    }
+                });
+            }
+            
+            // Fallback for browsers without visualViewport
+            window.addEventListener('resize', function() {
+                if (!('visualViewport' in window)) {
+                    // Check if window height changed significantly
+                    const windowHeight = window.innerHeight;
+                    
+                    if (Math.abs(windowHeight - (body.dataset.lastHeight || windowHeight)) > 200) {
+                        keyboardVisible = windowHeight < (body.dataset.lastHeight || windowHeight);
+                        body.dataset.lastHeight = windowHeight;
+                        
+                        if (keyboardVisible) {
+                            body.classList.add('keyboard-visible');
+                        } else {
+                            body.classList.remove('keyboard-visible');
+                        }
+                    }
+                }
+            });
+            
+            // Scroll to bottom when input is focused
+            messageInput?.addEventListener('focus', function() {
+                setTimeout(() => {
+                    const chatMessages = document.getElementById('chatMessages');
+                    if (chatMessages) {
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                }, 300);
+            });
+        });
+    </script>
 </body>
 </html>
