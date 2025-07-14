@@ -3224,7 +3224,7 @@ body {
   }
 
   .chat-messages {
-    padding-bottom: 100px; /* Space for the input box */
+    padding-bottom: 200px;
   }
 
   .mobile-bottom-nav {
@@ -3242,13 +3242,11 @@ body {
     }
   }
 
-  /* Ensure chat input is above bottom nav */
   .chat-input {
     transform: translateY(0);
     transition: transform 0.3s ease;
   }
 
-  /* Hide bottom nav when keyboard is visible */
   body.keyboard-visible .mobile-bottom-nav {
     transform: translateY(100%);
   }
