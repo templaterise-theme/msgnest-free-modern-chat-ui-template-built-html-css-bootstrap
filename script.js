@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* theme */
     themeToggle:       $('themeToggle'),
+    themeToggleVideo:       $('themeToggleVideo'),
 
     /* messaging */
     messageInput:      $('messageInput'),
@@ -113,7 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentTheme = localStorage.getItem('theme') || 'light';
   document.body.dataset.theme = currentTheme;
   updateThemeIcon(currentTheme);
+
   el.themeToggle?.addEventListener('click', toggleTheme);
+  el.themeToggleVideo?.addEventListener('click', toggleTheme);
+
 
   function toggleTheme () {
     const newTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
@@ -498,5 +502,11 @@ function setupUserSelection () {
     });
   }
 
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 });
 
