@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* theme */
     themeToggle:       $('themeToggle'),
-    themeToggleVideo:       $('themeToggleVideo'),
+    themeToggleVideo:  $('themeToggleVideo'),
 
     /* messaging */
     messageInput:      $('messageInput'),
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let callStartTime        = null;
   let pendingFiles         = [];
   let activeDropdown       = null;
-  let isMobile             = window.innerWidth <= 768;
+  let isMobile             = window.innerWidth <= 1024;
   let activeChat = false;
   let keyboardVisible = false;
 
@@ -111,25 +111,49 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isMobile) showBottomNav(); else hideBottomNav();
 
   /* ── theme ──────────────────────────────── */
+  // const currentTheme = localStorage.getItem('theme') || 'light';
+  // document.body.dataset.theme = currentTheme;
+  // updateThemeIcon(currentTheme);
+
+  // el.themeToggle?.addEventListener('click', toggleTheme);
+  // el.themeToggleVideo?.addEventListener('click', toggleTheme);
+
+
+  // function toggleTheme () {
+  //   const newTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+  //   document.body.dataset.theme = newTheme;
+  //   localStorage.setItem('theme', newTheme);
+  //   updateThemeIcon(newTheme);
+  // }
+  // function updateThemeIcon (t) {
+  //   if (!el.themeToggle) return;
+  //   el.themeToggle.innerHTML = t === 'dark'
+  //     ? '<i class="fas fa-moon"></i>'
+  //     : '<i class="fas fa-sun"></i>';
+  // }
+
+
   const currentTheme = localStorage.getItem('theme') || 'light';
   document.body.dataset.theme = currentTheme;
   updateThemeIcon(currentTheme);
 
-  el.themeToggle?.addEventListener('click', toggleTheme);
-  el.themeToggleVideo?.addEventListener('click', toggleTheme);
+  [el.themeToggle, el.themeToggleVideo].forEach(btn => {
+    btn?.addEventListener('click', toggleTheme);
+  });
 
-
-  function toggleTheme () {
+  function toggleTheme() {
     const newTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
     document.body.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
   }
-  function updateThemeIcon (t) {
-    if (!el.themeToggle) return;
-    el.themeToggle.innerHTML = t === 'dark'
+
+  function updateThemeIcon(theme) {
+    const icon = theme === 'dark'
       ? '<i class="fas fa-moon"></i>'
       : '<i class="fas fa-sun"></i>';
+    if (el.themeToggle) el.themeToggle.innerHTML = icon;
+    if (el.themeToggleVideo) el.themeToggleVideo.innerHTML = icon;
   }
 
   /* ── sidebars / overlay ─────────────────── */
@@ -183,7 +207,7 @@ el.navIcons.forEach(icon => {
   if (isMobile) setupMobileNavigation();
 
   window.addEventListener('resize', () => {
-    isMobile = window.innerWidth <= 768;
+    isMobile = window.innerWidth <= 1024;
     updateBottomNavVisibility();
   });
 
