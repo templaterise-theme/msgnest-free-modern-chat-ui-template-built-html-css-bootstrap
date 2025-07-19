@@ -3587,8 +3587,10 @@ body {
 @media (max-width: 1024px) {
             /* Fixed header for mobile */
             .chat-header {
-                position: sticky;
+                position: fixed;
                 top: 0;
+                left: 0;
+                right: 0;
                 z-index: 100;
             }
             
