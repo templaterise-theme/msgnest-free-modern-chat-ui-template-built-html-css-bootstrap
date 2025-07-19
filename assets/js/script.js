@@ -192,20 +192,20 @@ el.navIcons.forEach(icon => {
   });
 
 
-  // if ('visualViewport' in window) {
-  //     const visualViewport = window.visualViewport;
+  if ('visualViewport' in window) {
+      const visualViewport = window.visualViewport;
       
-  //     visualViewport.addEventListener('resize', function() {
-  //         // Check if keyboard is open
-  //         keyboardVisible = (window.innerHeight - visualViewport.height) > 100;
-  //         updateBottomNavVisibility();
+      visualViewport.addEventListener('resize', function() {
+          // Check if keyboard is open
+          keyboardVisible = (window.innerHeight - visualViewport.height) > 100;
+          updateBottomNavVisibility();
           
-  //         if (keyboardVisible && el.chatMessages) {
-  //             // Scroll to bottom when keyboard appears
-  //             el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
-  //         }
-  //     });
-  // }
+          if (keyboardVisible && el.chatMessages) {
+              // Scroll to bottom when keyboard appears
+              el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
+          }
+      });
+  }
 
   el.mobileBackBtn?.addEventListener('click', () => {
     activeChat = false;
@@ -493,28 +493,28 @@ function setupUserSelection () {
     }, 1000);
   }
 
-  // if ('visualViewport' in window) {
-  //   const viewport = window.visualViewport;
-  //   viewport.addEventListener('resize', () => {
-  //     keyboardVisible = (window.innerHeight - viewport.height) > 100;
-  //     updateBottomNavVisibility();
-  //     document.body.classList.toggle('keyboard-visible', keyboardVisible);
-  //     if (keyboardVisible && el.chatMessages) {
-  //       el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
-  //     }
-  //   });
-  // } else {
-  //   window.addEventListener('resize', () => {
-  //     const h = window.innerHeight;
-  //     const last = +document.body.dataset.lastHeight || h;
-  //     if (Math.abs(h - last) > 200) {
-  //       keyboardVisible = h < last;
-  //       document.body.dataset.lastHeight = h;
-  //       updateBottomNavVisibility();
-  //       document.body.classList.toggle('keyboard-visible', keyboardVisible);
-  //     }
-  //   });
-  // }
+  if ('visualViewport' in window) {
+    const viewport = window.visualViewport;
+    viewport.addEventListener('resize', () => {
+      keyboardVisible = (window.innerHeight - viewport.height) > 100;
+      updateBottomNavVisibility();
+      document.body.classList.toggle('keyboard-visible', keyboardVisible);
+      if (keyboardVisible && el.chatMessages) {
+        el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
+      }
+    });
+  } else {
+    window.addEventListener('resize', () => {
+      const h = window.innerHeight;
+      const last = +document.body.dataset.lastHeight || h;
+      if (Math.abs(h - last) > 200) {
+        keyboardVisible = h < last;
+        document.body.dataset.lastHeight = h;
+        updateBottomNavVisibility();
+        document.body.classList.toggle('keyboard-visible', keyboardVisible);
+      }
+    });
+  }
 
   if (el.messageInput) {
     el.messageInput.addEventListener('focus', function() {

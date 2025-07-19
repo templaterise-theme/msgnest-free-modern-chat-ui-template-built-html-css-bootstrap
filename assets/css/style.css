@@ -3582,3 +3582,39 @@ body {
     padding-left: 40px;
   }
 }
+
+
+@media (max-width: 1024px) {
+            /* Fixed header for mobile */
+            .chat-header {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+            
+            .chat-messages {
+                padding-top: 60px;
+                padding-bottom: 80px;
+                height: calc(100vh - 140px); /* Account for header and input */
+                overflow-y: auto;
+            }
+            
+            /* Prevent header from hiding when keyboard appears */
+            body.keyboard-visible .chat-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+            
+            /* Adjust messages when keyboard is visible */
+            body.keyboard-visible .chat-messages {
+                padding-top: 70px;
+                height: calc(100vh - 180px);
+            }
+            
+            /* Show back button on mobile */
+            .mobile-back-btn {
+                display: block;
+            }
+          
+        }
