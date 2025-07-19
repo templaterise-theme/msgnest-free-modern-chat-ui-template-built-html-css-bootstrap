@@ -84,15 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
   let keyboardVisible = false;
 
 
+  // function updateBottomNavVisibility() {
+  //       if (isMobile && el.mobileBottomNav) {
+  //           if (activeChat || keyboardVisible) {
+  //               el.mobileBottomNav.style.display = 'none';
+  //           } else {
+  //               el.mobileBottomNav.style.display = 'flex';
+  //           }
+  //       }
+  // }
+
   function updateBottomNavVisibility() {
-        if (isMobile && el.mobileBottomNav) {
-            if (activeChat || keyboardVisible) {
-                el.mobileBottomNav.style.display = 'none';
-            } else {
-                el.mobileBottomNav.style.display = 'flex';
-            }
-        }
+  if (el.mobileBottomNav) {
+    if (window.innerWidth > 1024) {
+      el.mobileBottomNav.style.display = 'none';
+    } else {
+      if (activeChat || keyboardVisible) {
+        el.mobileBottomNav.style.display = 'none';
+      } else {
+        el.mobileBottomNav.style.display = 'flex';
+      }
+    }
   }
+}
+
 
   updateBottomNavVisibility();
 
