@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Chat UI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="image-lightbox.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/image-lightbox.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-theme="light">
     <div class="chat-app">
@@ -43,8 +43,7 @@
                         </button>
                         <div class="user-profile dropdown " id="userProfileBtn">
                             <button class="dropdown-btn" aria-haspopup="true" data-dir="right top" aria-expanded="false">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="User"
-                                    class="no-lightbox" />
+                                <img src="assets/images/banner.jpg" alt="User" class="no-lightbox" />
                             </button>
                             <ul class="dropdown-menu setting-menu" aria-label="Setting">
                                 <li>
@@ -191,7 +190,7 @@
                         </div>
                     </div>
                     <div class="my-profile-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Avatar">
+                        <img src="assets/images/2147943827.jpg" alt="Avatar">
                     </div>
                 </div>
                 <div class="sidebar-container">
@@ -229,7 +228,7 @@
                         <!-- A Section -->
                         <div class="letter-divider letter-a">A</div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Adinda Kirana"
+                            <img src="assets/images/banner.jpg" alt="Adinda Kirana"
                                 class="avatar">
                             <div class="contact-name">Adinda Kirana</div>
 
@@ -249,8 +248,7 @@
 
                         </div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Alaya Cordova"
-                                class="avatar">
+                            <div class="avatar-initials avatar-green">AC</div>
                             <div class="contact-name">Alaya Cordova</div>
                             <div class="dropdown">
                                 <button class="dropdown-btn" data-dir="left bottom" aria-label="More options">
@@ -271,8 +269,7 @@
                         <!-- B Section -->
                         <div class="letter-divider letter-b">B</div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Brenda Bell"
-                                class="avatar">
+                            <div class="avatar-initials avatar-green">BB</div>
                             <div class="contact-name">Brenda Bell</div>
                             <div class="dropdown">
                                 <button class="dropdown-btn" data-dir="left bottom" aria-label="More options">
@@ -293,8 +290,7 @@
 
                         <div class="letter-divider letter-d">D</div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="David Green"
-                                class="avatar">
+                            <div class="avatar-initials avatar-green">DG</div>
                             <div class="contact-name">David Green</div>
                             <div class="dropdown">
                                 <button class="dropdown-btn" data-dir="left bottom" aria-label="More options">
@@ -309,11 +305,9 @@
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Dushane Daniel"
-                                class="avatar">
+                            <div class="avatar-initials avatar-green">DD</div>
                             <div class="contact-name">Dushane Daniel</div>
                             <div class="dropdown">
                                 <button class="dropdown-btn" data-dir="left bottom" aria-label="More options">
@@ -328,14 +322,12 @@
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
 
                         <!-- E Section -->
                         <div class="letter-divider letter-e">E</div>
                         <div class="contact-item">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Elia McDaniel"
-                                class="avatar">
+                            <div class="avatar-initials avatar-green">EM</div>
                             <div class="contact-name">Elia McDaniel</div>
                             <div class="dropdown">
                                 <button class="dropdown-btn" data-dir="left bottom" aria-label="More options">
@@ -478,39 +470,30 @@
             </div>
             <div class="tab-panel" id="tab-settings" hidden>
                 <div class="sidebar-header banner" id="backgroundOverlay"
-                    style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7');">
-                    <div class="header-content">
-                        <h1 class="settings-title">Settings</h1>
-                        <button class="edit-btn" onclick="document.getElementById('backgroundInput').click()">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                                <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                            </svg>
-                        </button>
-                        <input type="file" id="backgroundInput" accept="image/*" style="display: none;"
-                            onchange="handleBackgroundSelect(event)">
-                    </div>
+                    style="background-image: url('assets/images/banner.jpg');">
+                <div class="header-content">
+                    <h1 class="settings-title">Settings</h1>
+                    <button class="edit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                        <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                    </svg>
+                    </button>
+                    <input type="file" id="backgroundInput" accept="image/*" style="display: none;">
                 </div>
-
+                </div>
                 <div class="profile-section">
                     <div class="profile-photo-container">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7" alt="Profile"
-                            class="profile-photo" id="profileImage">
-                        <button class="camera-btn" onclick="document.getElementById('profileInput').click()">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                                <circle cx="12" cy="13" r="4" />
-                            </svg>
-                        </button>
-                        <input type="file" id="profileInput" accept="image/*" style="display: none;"
-                            onchange="handleFileSelect(event)">
+                    <img src="assets/images/2147943827.jpg" alt="Profile" class="profile-photo no-lightbox" id="profileImage">
+                    <button class="camera-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                        </svg>
+                    </button>
+                    <input type="file" id="profileInput" accept="image/*" style="display: none;">
                     </div>
-                   
                 </div>
-
                 <div class="sidebar-container">
                     <!-- Settings Sections -->
                     <div class="settings-content">
@@ -764,8 +747,7 @@
                     <div class="message-wrapper">
                         <div class="message-content">
                             <div class="image-message">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                                <img src="assets/images/454.jpg"  alt="Shared image" loading="lazy">
                             </div>
                         </div>
                         <div class="message-timestamp">10:33 AM</div>
@@ -842,21 +824,17 @@
                         <div class="message-content">
                             <div class="files-gallery multiple">
                                 <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
-                                        alt="Design mockup 1">
+                                    <img src="assets/images/1.jpg"  alt="Design mockup 1">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 2">
+                                   <img src="assets/images/2.jpg"  alt="Design mockup 1">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 3">
+                                   <img src="assets/images/3.jpg"  alt="Design mockup 1">
                                 </div>
                                 <div class="gallery-item">
                                     <div class="gallery-overlay gallery-more">+5 more</div>
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 4">
+                                    <img src="assets/images/4.jpg"  alt="Design mockup 1">
                                 </div>
                             </div>
                         </div>
@@ -876,119 +854,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="message received group" data-message-id="6565">
-                    <div class="message-wrapper">
-                        <div class="message-content">
-                            <div class="files-gallery multiple">
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
-                                        alt="Design mockup 1">
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 2">
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 3">
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="gallery-overlay gallery-more">+5 more</div>
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 4">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-timestamp">10:33 AM</div>
-                        <div class="message-actions">
-                            <button class="message-action-btn more-options" title="More options">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="message-dropdown">
-                                <div class="dropdown-item edit">
-                                    <i class="fas fa-pencil-alt"></i> Edit
-                                </div>
-                                <div class="dropdown-item delete">
-                                    <i class="fas fa-trash"></i> Delete
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="message received group" data-message-id="6565653">
-                    <div class="message-wrapper">
-                        <div class="message-content">
-                            <div class="files-gallery multiple">
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
-                                        alt="Design mockup 1">
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 2">
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 3">
-                                </div>
-                                <div class="gallery-item">
-                                    <div class="gallery-overlay gallery-more">+5 more</div>
-                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                        alt="Design mockup 4">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-timestamp">10:33 AM</div>
-                        <div class="message-actions">
-                            <button class="message-action-btn more-options" title="More options">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="message-dropdown">
-                                <div class="dropdown-item edit">
-                                    <i class="fas fa-pencil-alt"></i> Edit
-                                </div>
-                                <div class="dropdown-item delete">
-                                    <i class="fas fa-trash"></i> Delete
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="message received" data-message-id="5">
-                    <div class="message-wrapper">
-                        <div class="message-content">
-                            <div class="video-message">
-                                <video>
-                                    <source src="/placeholder.mp4" type="video/mp4">
-                                </video>
-                                <div class="video-play-overlay">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <polygon points="5,3 19,12 5,21 5,3"></polygon>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-timestamp">10:36 AM</div>
-                        <div class="message-actions">
-                            <button class="message-action-btn more-options" title="More options">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="message-dropdown">
-                                <div class="dropdown-item edit">
-                                    <i class="fas fa-pencil-alt"></i> Edit
-                                </div>
-                                <div class="dropdown-item delete">
-                                    <i class="fas fa-trash"></i> Delete
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="message sent" data-message-id="4">
                     <div class="message-wrapper">
                         <div class="message-content">
@@ -1184,24 +1049,19 @@
                     <div class="section-content">
                         <div class="media-grid">
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                                <img src="assets/images/1.jpg" alt="Shared image" loading="lazy">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                               <img src="assets/images/2.jpg" alt="Shared image" loading="lazy">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                               <img src="assets/images/3.jpg" alt="Shared image" loading="lazy">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                                <img src="assets/images/4.jpg" alt="Shared image" loading="lazy">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
-                                    alt="Shared image" loading="lazy">
+                                <img src="assets/images/2147943827.jpg" alt="Shared image" loading="lazy">
                             </div>
                             <div class="media-item">
                                 <div class="media-placeholder">+12</div>
@@ -1366,8 +1226,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Call Overlay -->
     <div class="call-overlay" id="callOverlay">
         <div class="audio-call-interface" id="audioCallInterface">
             <div class="call-avatar">SW</div>
@@ -1498,39 +1356,9 @@
                         <button class="control-btn video-btn" data-tooltip="Stop Video"><i class="fas fa-video"></i></button>
                         <button class="control-btn screen-share-btn" data-tooltip="Share Screen"><i class="fas fa-desktop"></i></button>
                         <button class="control-btn end-call-btn" id="videoHangupBtn" data-tooltip="End Call"><i class="fas fa-phone"></i></button>
-                        <button class="control-btn more-btn" data-tooltip="More Options"><i class="fas fa-ellipsis-h"></i></button>
                     </div>
                 </div>
             </div>
-            <!-- <div class="video-call-header">
-                <div class="video-call-info">
-                    <h3>Sarah Wilson</h3>
-                    <div class="video-call-duration" id="videoDuration">00:00</div>
-                </div>
-            </div>
-            <div class="video-main">
-                <div class="remote-video">
-                    <div class="remote-video-placeholder">
-                        <div class="remote-avatar">SW</div>
-                        <div class="remote-name">Sarah Wilson</div>
-                        <div class="call-status" id="videoCallStatus">Connecting...</div>
-                    </div>
-                </div>
-                <div class="local-video">
-                    <div class="local-video-content">Your Video</div>
-                </div>
-            </div>
-            <div class="video-call-controls">
-                <button class="video-control-btn mute" id="videoMuteBtn">
-                    <i class="fas fa-microphone"></i>
-                </button>
-                <button class="video-control-btn" id="videoCameraBtn">
-                    <i class="fas fa-video"></i>
-                </button>
-                <button class="video-control-btn hangup" id="videoHangupBtn">
-                    <i class="fas fa-phone"></i>
-                </button>
-            </div> -->
         </div>
     </div>
 
@@ -1556,95 +1384,9 @@
             <i class="fas fa-download"></i>
         </div>
     </div>
-    <script src="smart-dropdown.js"></script>
-    <script src="accordion.js"></script>
-    <script src="image-lightbox.js"></script>
-    <script src="script.js"></script>
-    <script>
-        new SmartDropdown({
-            selector: '.dropdown-btn',
-            gap: 6,
-            edge: 8,
-            defaultDir: 'top right'
-        });
-        new Accordion({
-            selector: '.settings-section',
-            oneAtATime: true, 
-            duration: 250 
-        });
-        new ImageLightbox();
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                document.getElementById('profileImage').src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-        function handleBackgroundSelect(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const overlay = document.getElementById('backgroundOverlay');
-                overlay.style.backgroundImage = `url(${e.target.result})`;
-            };
-            reader.readAsDataURL(file);
-        }
-    </script>
-     <script>
-        // Detect when virtual keyboard is shown/hidden on mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const body = document.body;
-            const messageInput = document.getElementById('messageInput');
-            
-            let keyboardVisible = false;
-            
-            if ('visualViewport' in window) {
-                const viewport = window.visualViewport;
-                
-                viewport.addEventListener('resize', function() {
-                   
-                    keyboardVisible = (window.innerHeight - viewport.height) > 100;
-                    
-                    if (keyboardVisible) {
-                        body.classList.add('keyboard-visible');
-                    } else {
-                        body.classList.remove('keyboard-visible');
-                    }
-                });
-            }
-            
-            window.addEventListener('resize', function() {
-                if (!('visualViewport' in window)) {
-                 
-                    const windowHeight = window.innerHeight;
-                    
-                    if (Math.abs(windowHeight - (body.dataset.lastHeight || windowHeight)) > 200) {
-                        keyboardVisible = windowHeight < (body.dataset.lastHeight || windowHeight);
-                        body.dataset.lastHeight = windowHeight;
-                        
-                        if (keyboardVisible) {
-                            body.classList.add('keyboard-visible');
-                        } else {
-                            body.classList.remove('keyboard-visible');
-                        }
-                    }
-                }
-            });
-            
-            messageInput?.addEventListener('focus', function() {
-                setTimeout(() => {
-                    const chatMessages = document.getElementById('chatMessages');
-                    if (chatMessages) {
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    }
-                }, 300);
-            });
-        });
-    </script>
+    <script src="assets/js/smart-dropdown.js"></script>
+    <script src="assets/js/accordion.js"></script>
+    <script src="assets/js/image-lightbox.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
