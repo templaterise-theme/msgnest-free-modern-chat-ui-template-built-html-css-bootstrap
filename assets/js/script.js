@@ -493,28 +493,28 @@ function setupUserSelection () {
     }, 1000);
   }
 
-  if ('visualViewport' in window) {
-    const viewport = window.visualViewport;
-    viewport.addEventListener('resize', () => {
-      keyboardVisible = (window.innerHeight - viewport.height) > 100;
-      updateBottomNavVisibility();
-      document.body.classList.toggle('keyboard-visible', keyboardVisible);
-      if (keyboardVisible && el.chatMessages) {
-        el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
-      }
-    });
-  } else {
-    window.addEventListener('resize', () => {
-      const h = window.innerHeight;
-      const last = +document.body.dataset.lastHeight || h;
-      if (Math.abs(h - last) > 200) {
-        keyboardVisible = h < last;
-        document.body.dataset.lastHeight = h;
-        updateBottomNavVisibility();
-        document.body.classList.toggle('keyboard-visible', keyboardVisible);
-      }
-    });
-  }
+  // if ('visualViewport' in window) {
+  //   const viewport = window.visualViewport;
+  //   viewport.addEventListener('resize', () => {
+  //     keyboardVisible = (window.innerHeight - viewport.height) > 100;
+  //     updateBottomNavVisibility();
+  //     document.body.classList.toggle('keyboard-visible', keyboardVisible);
+  //     if (keyboardVisible && el.chatMessages) {
+  //       el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
+  //     }
+  //   });
+  // } else {
+  //   window.addEventListener('resize', () => {
+  //     const h = window.innerHeight;
+  //     const last = +document.body.dataset.lastHeight || h;
+  //     if (Math.abs(h - last) > 200) {
+  //       keyboardVisible = h < last;
+  //       document.body.dataset.lastHeight = h;
+  //       updateBottomNavVisibility();
+  //       document.body.classList.toggle('keyboard-visible', keyboardVisible);
+  //     }
+  //   });
+  // }
 
   if (el.messageInput) {
     el.messageInput.addEventListener('focus', function() {
