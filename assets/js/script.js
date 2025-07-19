@@ -192,20 +192,20 @@ el.navIcons.forEach(icon => {
   });
 
 
-  if ('visualViewport' in window) {
-      const visualViewport = window.visualViewport;
+  // if ('visualViewport' in window) {
+  //     const visualViewport = window.visualViewport;
       
-      visualViewport.addEventListener('resize', function() {
-          // Check if keyboard is open
-          keyboardVisible = (window.innerHeight - visualViewport.height) > 100;
-          updateBottomNavVisibility();
+  //     visualViewport.addEventListener('resize', function() {
+  //         // Check if keyboard is open
+  //         keyboardVisible = (window.innerHeight - visualViewport.height) > 100;
+  //         updateBottomNavVisibility();
           
-          if (keyboardVisible && el.chatMessages) {
-              // Scroll to bottom when keyboard appears
-              el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
-          }
-      });
-  }
+  //         if (keyboardVisible && el.chatMessages) {
+  //             // Scroll to bottom when keyboard appears
+  //             el.chatMessages.scrollTop = el.chatMessages.scrollHeight;
+  //         }
+  //     });
+  // }
 
   el.mobileBackBtn?.addEventListener('click', () => {
     activeChat = false;
