@@ -15,7 +15,7 @@
   --message-sent: #1877f2;
   --message-received: #ffffff;
   --hover-bg: #f2f3f5;
-
+  --tertiary-bg: #f0f2f5;
   --bg-gradient: linear-gradient(135deg, #e0e7ff, #ffffff);
   --surface-1: rgba(255, 255, 255, 0.92); /* panels / container */
   --surface-2: rgba(255, 255, 255, 0.85); /* header / controls */
@@ -45,7 +45,7 @@
   --hover-bg: #3a3b3c;
   --primary: #2d88ff;
   --border: #3e4042;
-
+  --tertiary-bg: #2a3942;
   --bg-gradient: linear-gradient(135deg, #1a2a6c, #2c3e50);
   --surface-1: rgba(15, 23, 42, 0.95);
   --surface-2: rgba(15, 23, 42, 0.9);
@@ -2642,6 +2642,24 @@ body {
   flex: 1;
   overflow-y: auto;
   overscroll-behavior: contain;
+}
+
+/* Scrollbar Styling */
+.sidebar-container::-webkit-scrollbar{
+  width: 6px;
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb{
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-bg);
 }
 
 .tab-panel[hidden] {
