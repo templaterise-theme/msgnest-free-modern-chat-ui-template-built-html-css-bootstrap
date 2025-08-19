@@ -1,3 +1,10 @@
+/* 
+Name                 : MsgNest – Free Modern Chat UI Template built with HTML, CSS & Bootstrap
+Author               : TemplateRise
+Url                  : https://www.templaterise.com/template/msgnest-free-modern-chat-ui-template-built-with-html-css-bootstrap
+*/
+
+
 document.addEventListener('DOMContentLoaded', () => {
   /* ── helper ─────────────────────────────── */
   const $ = id => document.getElementById(id);
